@@ -1,15 +1,15 @@
 package sk.virtualvoid.tools.sample;
 
-import java.util.ArrayList;
-
-import sk.virtualvoid.html.ImageGetter;
-
 import android.app.Activity;
 import android.text.Html;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+
+import sk.virtualvoid.html.ImageGetter;
 
 public class DemoEntityAdapter extends BaseAdapter {
 	private Activity context;

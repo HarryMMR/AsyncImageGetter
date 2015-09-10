@@ -21,7 +21,7 @@ public class BitmapUtility {
 
 	// http://stackoverflow.com/a/823966
 	public static Bitmap getBitmapFromFile(File file, boolean rescale) {
-		final int REQUIRED_SIZE = 70;
+		final int REQUIRED_SIZE = 270;
 		try {
 			// decode image size
 			BitmapFactory.Options opts = new BitmapFactory.Options();

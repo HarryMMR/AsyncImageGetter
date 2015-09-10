@@ -1,11 +1,5 @@
 package sk.virtualvoid.html;
 
-import java.io.File;
-
-import sk.virtualvoid.LibraryConstants;
-import sk.virtualvoid.tools.BitmapUtility;
-import sk.virtualvoid.tools.FileDownloader;
-import sk.virtualvoid.tools.FileDownloaderFactory;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -13,12 +7,22 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.io.File;
+
+import sk.virtualvoid.LibraryConstants;
+import sk.virtualvoid.tools.BitmapUtility;
+import sk.virtualvoid.tools.FileDownloader;
+import sk.virtualvoid.tools.FileDownloaderFactory;
+
 /**
  * 
  * @author suchan_j
  *
  */
 public class ImageGetterTask extends AsyncTask<Void, Void, Drawable> {
+
+	public static final String TAG = ImageGetterTask.class.getSimpleName();
+
 	private Resources resources;
 	private ImageGetterTaskListener taskListener;
 	private ImageGetterTaskData taskData;
@@ -52,6 +56,7 @@ public class ImageGetterTask extends AsyncTask<Void, Void, Drawable> {
 			
 			Drawable resultDrawable = new BitmapDrawable(resources, bitmap);
 			resultDrawable.setBounds(0, 0, resultDrawable.getIntrinsicWidth(), resultDrawable.getIntrinsicHeight());
+			Log.d(TAG,"drawable bounds: " + resultDrawable.getBounds());
 			return resultDrawable;
 		} catch (Throwable e) {
 			Log.e(LibraryConstants.TAG, String.format("Unable to obtain drawable: %s", e.getMessage()));
